@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamburger Menu</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+      }
+      .btn .line {
+        transition: y 300ms ease-in 300ms, rotate 300ms ease-in,
+          opacity 0ms 300ms;
+        transform-origin: center;
+      }
+      .btn:hover .line {
+        transition: y 300ms ease-in, rotate 300ms ease-in 300ms,
+          opacity 0ms 300ms;
+      }
+      .btn:hover :is(.top, .bottom) {
+        y: 45;
+      }
+      .btn:hover .top {
+        rotate: 45deg;
+      }
+      .btn:hover .bottom {
+        rotate: -45deg;
+      }
+      .btn:hover .middle {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">
+      <svg class="hamburger" viewBox="0 0 100 100" width="250">
+        <rect class="line top" width="80" height="10" x="10" y="25"></rect>
+        <rect class="line middle" width="80" height="10" x="10" y="45"></rect>
+        <rect class="line bottom" width="80" height="10" x="10" y="65"></rect>
+      </svg>
+    </button>
+    <script>
+      function toggleMenu() {
+        const menuIcon = document.querySelector(".menu-icon");
+        menuIcon.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
